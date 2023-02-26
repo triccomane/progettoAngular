@@ -11,6 +11,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +23,7 @@ import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { Pagina1Component } from './componenti/pagina1/pagina1.component';
 import { Pagina2Component } from './componenti/pagina2/pagina2.component';
 import { Pagina3Component } from './componenti/pagina3/pagina3.component';
+import { NotfoundComponent } from './componenti/notfound/notfound.component';
 
 
 @NgModule({
@@ -30,7 +34,8 @@ import { Pagina3Component } from './componenti/pagina3/pagina3.component';
     DashboardComponent,
     Pagina1Component,
     Pagina2Component,
-    Pagina3Component
+    Pagina3Component,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,8 @@ import { Pagina3Component } from './componenti/pagina3/pagina3.component';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
+    MatInputModule,
+    HttpClientModule,
 
   ],
   providers: [],
