@@ -8,7 +8,7 @@ import { User } from '../modelli/user.model';
 })
 export class AuthService {
   user!: User;
-  isLoggedIn = false
+  isLoggedIn = true
   registerURL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDW5RT6p6RT3qVBtg5uQidZQN8c0W61sDg'
   loginURL = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDW5RT6p6RT3qVBtg5uQidZQN8c0W61sDg'
   
