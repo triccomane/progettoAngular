@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +53,7 @@ import { NotfoundComponent } from './componenti/notfound/notfound.component';
     MatTableModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
 
   ],
   providers: [],

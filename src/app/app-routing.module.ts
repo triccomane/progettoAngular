@@ -10,7 +10,7 @@ import { Pagina3Component } from './componenti/pagina3/pagina3.component';
 import { RegisterComponent } from './componenti/register/register.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent, canActivate: [AuthGuard], children: [ //creo canActivate per rendirizzare chi non è loggato al login
+  {path: '', component: DashboardComponent, canActivate: [AuthGuard], children: [ //creo canActivate per rendirizzare chi non è loggato al login da sstemare authguard non può reindirizzare a pagina1
     {path: '', redirectTo: 'pagina1', pathMatch: 'full'}, //vengo sempre rimandato a pagina 1 di default
     {path: 'pagina1', component: Pagina1Component},
     {path: 'pagina2', component: Pagina2Component},

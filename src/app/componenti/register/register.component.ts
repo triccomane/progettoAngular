@@ -16,9 +16,10 @@ export class RegisterComponent implements OnInit{
   onSubmit(form: NgForm){
     const email = form.value.email
     const password = form.value.password
-    this.autService.signUp({email: email, password: password, returnSecureToken: true}).subscribe(data => {
+    this.autService.signUp(email, password).subscribe(data => {
       console.log(data)
     }) 
     form.reset()    
+    
   }
 }

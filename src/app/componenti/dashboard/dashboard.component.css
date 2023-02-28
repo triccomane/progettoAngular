@@ -4,11 +4,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #eee;
+    /* background: #eee; */
   }
   
 .active {
-    background-color: purple;
+    background-color: #7b1fa2;
 }
 
 .example-spacer {
