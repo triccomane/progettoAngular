@@ -1,19 +1,19 @@
 <form [formGroup]="pagina2form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
-        <mat-label>Nome</mat-label>
-        <input matInput type="nome" formControlName="nome">
+        <mat-label>Position</mat-label>
+        <input matInput type="position" formControlName="position">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email">
+        <mat-label>Name</mat-label>
+        <input matInput type="name" formControlName="name">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Colore</mat-label>
-        <mat-select name="colore" formControlName="colore">
-            <mat-option value="rosso">Rosso</mat-option>
-            <mat-option value="blu">Blu</mat-option>
-        </mat-select>
+        <mat-label>Weight</mat-label>
+        <input matInput type="weight" formControlName="weight">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Symbol</mat-label>
+        <input matInput type="symbol" formControlName="symbol">
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Invia</button>
-
 </form>
