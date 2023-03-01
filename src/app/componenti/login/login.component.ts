@@ -23,9 +23,8 @@ export class LoginComponent implements OnInit{
       const expirationDate = new Date(new Date().getTime() + data.expiresIn *1000)
       this.authService.createUser(data.email, data.localID, data.idToken, expirationDate)
       localStorage.setItem('user', JSON.stringify(this.authService.user))
-
       console.log(this.authService.user)
-      // chiamare cose con firebase
+      form.reset()
     })
 
   }
