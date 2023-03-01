@@ -9,14 +9,16 @@ import { FirebaseService } from 'src/app/servizi/firebase.service';
 })
 export class Pagina2Component implements OnInit{
   pagina2form!: FormGroup;
+  urlFirebase = 'https://progettoangular-d8f2b-default-rtdb.europe-west1.firebasedatabase.app/'
 
   constructor(private firebase: FirebaseService){}
 
   ngOnInit(): void {
     this.pagina2form = new FormGroup({
-      nome: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      colore: new FormControl(null, [Validators.required]),
+      position: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required]),
+      weight: new FormControl(null, [Validators.required]),
+      symbol: new FormControl(null, [Validators.required]),
 
     })
 
@@ -30,8 +32,12 @@ export class Pagina2Component implements OnInit{
 
     this.firebase
     .insertPersona(
-      'https://progettoangular-d8f2b-default-rtdb.europe-west1.firebasedatabase.app/persone.json',
-      {nome: this.pagina2form.value.nome, email: this.pagina2form.value.email}
+      this.urlFirebase + 'PeriodicElements.json', //controllare se url savlarto così va bene
+      {position: this.pagina2form.value.position, 
+      name: this.pagina2form.value.name,
+      weight: this.pagina2form.value.weight,
+      symbol: this.pagina2form.value.symbol,
+      }
     )
       .subscribe(data => {
         console.log(data)

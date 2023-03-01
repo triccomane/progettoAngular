@@ -13,7 +13,7 @@ export class FirebaseService {
     return this.http.post(`${url}?auth=${this.authService.user.token}`, body)
   }
 
-  getPersone(url: string){
+  getElements(url: string){
     return this.http.get(`${url}?auth=${this.authService.user.token}`)
   }
 }
