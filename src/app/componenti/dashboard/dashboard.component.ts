@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit{
   }
 
   onLogout(){
-    alert(this.authService.logout)
+    this.authService.logout()
     console.log(localStorage)
   }
 }

@@ -1,4 +1,11 @@
-<h1>Login</h1>
+<h1>Login
+    <span class="material-symbols-outlined">
+        <button (click)="onRegister()" class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>how_to_reg</mat-icon>
+            register
+        </button>
+    </span>
+</h1>
 <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
     <mat-form-field appearance="fill">
         <mat-label>email</mat-label>
