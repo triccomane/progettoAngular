@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { _countGroupLabelsBeforeOption } from '@angular/material/core';
+import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/servizi/firebase.service';
 
 export interface PeriodicElement {
@@ -29,18 +31,33 @@ const urlFirebase = 'https://progettoangular-d8f2b-default-rtdb.europe-west1.fir
   })
 export class Pagina1Component implements OnInit{
   elements: any
+  chiave: String[] = []
+  
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'delete'];
   // dataSource = ELEMENT_DATA;
   dataSource = []
-  constructor(private firebase: FirebaseService) {}
+  constructor(private firebase: FirebaseService, private router: Router) {}
   ngOnInit(): void {
     this.firebase.getElements(urlFirebase+'PeriodicElements.json')
     .subscribe((data: any) =>{
-      this.elements = Object.keys(data).map((key)=> {return data[key]})
-      //console.log(this.persone)
+      
+      console.log(data)
+      this.elements = Object.keys(data).map((key)=> {
+        this.chiave.push(key)
+        //console.log(this.chiave, "questo è l'elemento")
+        return data[key];
+      })
+      //console.log(this.elements)
       this.dataSource = this.elements
     })
   }
-  
+  onDeleteElemento(element: any){
+    let key = this.chiave[this.elements.indexOf(element)].toString();
+    this.firebase.deleteElement(urlFirebase + 'PeriodicElements', key)
+    .subscribe(data => {
+      this.router.navigate(['/pagina1'])
+    })
+    
+  }
 }
